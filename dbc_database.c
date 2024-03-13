@@ -12,12 +12,119 @@ Message_value RDCAN_t_value[app_rdcan_num]={[0 ...(app_rdcan_num-1)]={.data=NULL
 Message_eq_value EQCAN_t_value[app_eqcan_num]={[0 ...(app_eqcan_num-1)]={.data=NULL, .signal_phy={0}}};
 const Message_const CCAN_t_const[app_ccan_num]={
         {
-            .id=2566878475, .name="PBF_EBS", .dlc=8, .num_signals=4, .trans="Rx", .cycle=0, .signals=
+            .id=2566878475, .name="PBF_EBS", .dlc=8, .num_signals=6, .trans="Rx", .cycle=0, .signals=
             {
                 {.sgname="BrakingErrorEvent1", .startbit=32, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=15, .val=0},
                 {.sgname="BrakingErrorEventActive1", .startbit=30, .length=1, .mode=1, .factor=1, .offset=0, .min=0, .max=1, .val=0},
+                {.sgname="CRC8", .startbit=0, .length=8, .mode=1, .factor=1, .offset=0, .min=0, .max=255, .val=0},
+                {.sgname="Counter", .startbit=8, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=15, .val=0},
                 {.sgname="BrakingSystemADModeState1", .startbit=24, .length=3, .mode=1, .factor=1, .offset=0, .min=0, .max=7, .val=0},
                 {.sgname="BrakingSystemStatus", .startbit=16, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+            },
+        },
+        {
+            .id=2566838539, .name="AUXIO_EBS", .dlc=8, .num_signals=10, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="AuxiliaryIO4TrailerBrakestatus", .startbit=0, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO3", .startbit=2, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO2", .startbit=4, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO1", .startbit=6, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="TrailerControlPressure", .startbit=8, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="AuxiliaryIO8DoorSwitch", .startbit=16, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO7Lowpressureswitch", .startbit=18, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO6Rearaxle1", .startbit=20, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO5ParkingBrakeswitch", .startbit=22, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryIO9EBIswitch", .startbit=30, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+            },
+        },
+        {
+            .id=2566834699, .name="DM1_EBS", .dlc=8, .num_signals=10, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="ProtectLampSt", .startbit=0, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AmberWarnLamp", .startbit=2, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="RedStopLampSt", .startbit=4, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="MalfunctionIndLampSt", .startbit=6, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="SPN_LeastByteSPN", .startbit=16, .length=8, .mode=1, .factor=1, .offset=0, .min=0, .max=255, .val=0},
+                {.sgname="SPN_SecondByteSPN", .startbit=24, .length=8, .mode=1, .factor=1, .offset=0, .min=0, .max=255, .val=0},
+                {.sgname="FMI", .startbit=32, .length=5, .mode=1, .factor=1, .offset=0, .min=0, .max=31, .val=0},
+                {.sgname="SPN_3MostSignificantBits", .startbit=37, .length=3, .mode=1, .factor=1, .offset=0, .min=0, .max=7, .val=0},
+                {.sgname="OC_CurrCount", .startbit=40, .length=7, .mode=1, .factor=1, .offset=0, .min=0, .max=127, .val=0},
+                {.sgname="SPNConversionMethod", .startbit=47, .length=1, .mode=1, .factor=1, .offset=0, .min=0, .max=1, .val=0},
+            },
+        },
+        {
+            .id=2566827275, .name="EBC3_EBS", .dlc=8, .num_signals=8, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="BrkAppPrssHghRngFrntAxlLeftWheel", .startbit=0, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngFrntAxlRghtWheel", .startbit=8, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxle1LeftWheel", .startbit=16, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxl1RightWheel", .startbit=24, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxle2LeftWheel", .startbit=32, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxl2RightWheel", .startbit=40, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxle3LeftWheel", .startbit=48, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+                {.sgname="BrkAppPrssHghRngRrAxl3RightWheel", .startbit=56, .length=8, .mode=1, .factor=5, .offset=0, .min=0, .max=1250, .val=0},
+            },
+        },
+        {
+            .id=2633935883, .name="EBC4_EBS", .dlc=8, .num_signals=8, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="BrkLnngRminingFrontAxleLeftWheel", .startbit=0, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRmningFrontAxleRightWheel", .startbit=8, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRminingRearAxle1LeftWheel", .startbit=16, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRmningRearAxle1RightWheel", .startbit=24, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRminingRearAxle2LeftWheel", .startbit=32, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRmningRearAxle2RightWheel", .startbit=40, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRminingRearAxle3LeftWheel", .startbit=48, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="BrkLnngRmningRearAxle3RightWheel", .startbit=56, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+            },
+        },
+        {
+            .id=2566767627, .name="EBC5_EBS", .dlc=8, .num_signals=10, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="BrakeTemperatureWarning", .startbit=0, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="HaltBrakeMode", .startbit=2, .length=3, .mode=1, .factor=1, .offset=0, .min=0, .max=7, .val=0},
+                {.sgname="HillHolderMode", .startbit=5, .length=3, .mode=1, .factor=1, .offset=0, .min=0, .max=7, .val=0},
+                {.sgname="FoundationBrakeUse", .startbit=8, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="XBRSystemState", .startbit=10, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="XBRActiveControlMode", .startbit=12, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=7, .val=0},
+                {.sgname="XBRAccelerationLimit", .startbit=16, .length=8, .mode=1, .factor=0.1, .offset=-12.5, .min=-12.5, .max=12.5, .val=0},
+                {.sgname="PrkngBrakeActuatorFullyActivated", .startbit=24, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="EmergencyBrakingActive", .startbit=26, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="RailroadMode", .startbit=28, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+            },
+        },
+        {
+            .id=2298375691, .name="HRW_EBS", .dlc=8, .num_signals=4, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="FrontAxleLeftWheelSpeed", .startbit=0, .length=16, .mode=1, .factor=0.00390625, .offset=0, .min=0, .max=250.996, .val=0},
+                {.sgname="FrontAxleRightWheelSpeed", .startbit=16, .length=16, .mode=1, .factor=0.00390625, .offset=0, .min=0, .max=250.996, .val=0},
+                {.sgname="RearAxleLeftWheelSpeed", .startbit=32, .length=16, .mode=1, .factor=0.00390625, .offset=0, .min=0, .max=250.996, .val=0},
+                {.sgname="RearAxleRightWheelSpeed", .startbit=48, .length=16, .mode=1, .factor=0.00390625, .offset=0, .min=0, .max=250.996, .val=0},
+            },
+        },
+        {
+            .id=2565872907, .name="SAS_EBS", .dlc=8, .num_signals=8, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="SteeringWheelAngle", .startbit=0, .length=16, .mode=1, .factor=0.0009765625, .offset=-31.374, .min=-31.374, .max=31.374, .val=0},
+                {.sgname="SteeringWheelAngleRangeCounter", .startbit=16, .length=6, .mode=1, .factor=1, .offset=-32, .min=-32, .max=29, .val=0},
+                {.sgname="SteerWheelAngleRangeCounterType", .startbit=22, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="SteeringWheelAngleRange", .startbit=32, .length=16, .mode=1, .factor=0.0009765625, .offset=-31.374, .min=-31.374, .max=31.374, .val=0},
+                {.sgname="SteeringAngleSensorActiveMode", .startbit=48, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="SteeringAngleSensorCalibrated", .startbit=50, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="MessageCounter", .startbit=56, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=15, .val=0},
+                {.sgname="MessageChecksum", .startbit=60, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=15, .val=0},
+            },
+        },
+        {
+            .id=2566803211, .name="VDC1_EBS", .dlc=8, .num_signals=7, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="VDCLampState", .startbit=0, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="VDCFullyoperational", .startbit=2, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="VDCBrakeLightRequest", .startbit=4, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ROPEngineControlActive", .startbit=8, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ROPBrakeControlActive", .startbit=10, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="YCEngineControlActive", .startbit=12, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="YCBrakeControlActive", .startbit=14, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
             },
         },
         {
@@ -27,8 +134,9 @@ const Message_const CCAN_t_const[app_ccan_num]={
             },
         },
         {
-            .id=2565867787, .name="VDC2_EBS", .dlc=8, .num_signals=3, .trans="Rx", .cycle=0, .signals=
+            .id=2565867787, .name="VDC2_EBS", .dlc=8, .num_signals=4, .trans="Rx", .cycle=0, .signals=
             {
+                {.sgname="SteeringWheelAngle", .startbit=0, .length=16, .mode=1, .factor=0.0009765625, .offset=-31.374, .min=-31.374, .max=31.374, .val=0},
                 {.sgname="YawRate", .startbit=24, .length=16, .mode=1, .factor=0.0001220703125, .offset=-3.92, .min=-3.92, .max=3.92, .val=0},
                 {.sgname="LongitudinalAcceleration", .startbit=56, .length=8, .mode=1, .factor=0.1, .offset=-12.5, .min=-12.5, .max=12.5, .val=0},
                 {.sgname="LateralAcceleration", .startbit=40, .length=16, .mode=1, .factor=0.00048828125, .offset=-15.687, .min=-15.687, .max=15.687, .val=0},
@@ -91,10 +199,27 @@ const Message_const CCAN_t_const[app_ccan_num]={
             },
         },
         {
-            .id=2565865739, .name="EBC1_EBS", .dlc=8, .num_signals=2, .trans="Rx", .cycle=0, .signals=
+            .id=2565865739, .name="EBC1_EBS", .dlc=8, .num_signals=19, .trans="Rx", .cycle=0, .signals=
             {
+                {.sgname="ASREngineControlActive", .startbit=0, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ASRBrakeControlActive", .startbit=2, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="Anti_lockbraking_ABS_Active", .startbit=4, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
                 {.sgname="EBSbrakeswitch", .startbit=6, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
                 {.sgname="BrakePedalPosition", .startbit=8, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="ABSOffroadSwitch", .startbit=16, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ASROffroadSwitch", .startbit=18, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ASR_hillholder_Switch", .startbit=20, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="TractionControlOverrideSwitch", .startbit=22, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AcceleratorInterlockSwitch", .startbit=24, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="EngineDerateSwitch", .startbit=26, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="AuxiliaryEngineShutdownSwitch", .startbit=28, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="RemoteAcceleratorEnableSwitch", .startbit=30, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="EngineRetarderSelection", .startbit=32, .length=8, .mode=1, .factor=0.4, .offset=0, .min=0, .max=100, .val=0},
+                {.sgname="ABSFullyOperational", .startbit=40, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="EBSRedWarningLampState", .startbit=42, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ABS_EBSAmberWarningSignal", .startbit=44, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="ATC_ASRLampState", .startbit=46, .length=2, .mode=1, .factor=1, .offset=0, .min=0, .max=3, .val=0},
+                {.sgname="SrcAddrssOfCntrllngDvcFrBrkeCtrl", .startbit=48, .length=8, .mode=1, .factor=1, .offset=0, .min=0, .max=255, .val=0},
             },
         },
         {
@@ -2797,6 +2922,18 @@ const Message_eq_const EQCAN_t_const[app_eqcan_num]={
                 {.sgname="OBJ_Is_EMERGENCY_VCL_14", .startbit=333, .length=1, .mode=1, .factor=1, .offset=0, .min=0, .max=1, .val=0},
                 {.sgname="OBJ_EMERGENCY_LIGHT_COLOR_14", .startbit=334, .length=4, .mode=1, .factor=1, .offset=0, .min=0, .max=15, .val=0},
                 {.sgname="OBJ_EMERGENCY_V_14", .startbit=338, .length=1, .mode=1, .factor=1, .offset=0, .min=0, .max=1, .val=0},
+            },
+        },
+        {
+            .id=512, .name="RandomCodeRequest_ADAS", .dlc=16, .num_signals=1, .trans="Rx", .cycle=0, .signals=
+            {
+                {.sgname="randomrequestcode", .startbit=0, .length=128, .mode=1, .factor=1, .offset=0, .min=0, .max=4095, .val=0},
+            },
+        },
+        {
+            .id=513, .name="RandomCodeResponse_ADU", .dlc=16, .num_signals=1, .trans="Tx", .cycle=10000, .signals=
+            {
+                {.sgname="feedback", .startbit=0, .length=128, .mode=1, .factor=1, .offset=0, .min=0, .max=4095, .val=0},
             },
         }
 };

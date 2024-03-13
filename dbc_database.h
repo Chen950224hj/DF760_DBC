@@ -1,13 +1,13 @@
 #ifndef DBC_DATABASE_H
 #define DBC_DATABASE_H
 
-#define j1939can_maxsignal_num 11
+#define j1939can_maxsignal_num 19
 #define eqcan_maxsignal_num 73
-#define app_ccan_num 22
+#define app_ccan_num 30
 #define app_pcan_num 12
 #define app_rcan_num 9
 #define app_rdcan_num 9
-#define app_eqcan_num 40
+#define app_eqcan_num 42
 //#define UNSIGNED 0
 //#define SIGNED 1
 //#define IEEE_FLOAT 2

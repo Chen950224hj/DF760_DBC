@@ -5,8 +5,8 @@
 
 #define MAX_LINE_LENGTH 150
 #define NUM_DBCFILE 5
-#define APP_EQ_NUM 40
-#define APP_NUM 92                  //APP message num
+#define APP_EQ_NUM 42
+#define APP_NUM 102                  //APP message num
 
 //定义Signal结构体
 typedef struct {
